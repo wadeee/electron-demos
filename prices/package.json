@@ -7,9 +7,39 @@
   "scripts": {
     "start": "electron app.js"
   },
+  "build": {
+    "appId": "com.wade.app",
+    "productName": "prices",
+    "copyright": "Copyright © 2025 Wade",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "public/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "prices"
+    }
+  },
   "license": "ISC",
   "devDependencies": {
-    "electron": "^3.0.2"
+    "electron": "^3.0.2",
+    "electron-builder": "^25.1.8"
   },
   "dependencies": {
     "papaparse": "^4.6.0"
